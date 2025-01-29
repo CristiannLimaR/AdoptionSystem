@@ -6,18 +6,17 @@ import { dbConection } from "./mongo.js";
 import limiter from "../src/middlewares/validar-cant-peticiones.js";
 import authRoutes from '../src/auth/auth.routes.js'
 
-export const configureMiddlewares = (app) => {
+export const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
-  app.use(cors());
   app.use(express.json());
+  app.use(cors());
   app.use(helmet());
   app.use(morgan("dev"));
   app.use(limiter);
 };
 
-const confugreRutes = (app) => {
-  const authPath = '/adoptionSystem/v1/auth';
-  app.use(authPath, authRoutes);
+const routes = (app) => {
+  app.use('/adoptionSystem/v1/auth', authRoutes);
 };
 
 const connectDB = async () => {
@@ -29,13 +28,20 @@ const connectDB = async () => {
   }
 };
 
-export const startServer = async () => {
+export const initServer = () => {
   const app = express();
   const port = process.env.PORT || 3000;
-  await connectDB();
-  configureMiddlewares(app);
-  confugreRutes(app);
-  app.listen(port, () => {
+
+  try {
+    middlewares(app);
+    connectDB();
+    routes(app);
+    app.listen(port)
+    confugreRutes(app);
     console.log(`Server running on port ${port}`);
-  });
+
+  } catch (err) {
+    console.log(`Server init failed: ${err}`)
+  }
+
 };

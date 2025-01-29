@@ -1,19 +1,31 @@
-import mongoose from "mongoose";
-const UserSchema = mongoose.Schema({
+import { Schema, model } from "mongoose";
+const UserSchema = Schema({
   name: {
     type: String,
-    required: [true, "The name is obligatory"],
+    required: [true, "The name is required"],
+    maxLength: [25, 'Cant be overcome 25 characters']
   },
   email: {
     type: String,
     required: [true, "The email is obligatory"],
     unique: true,
   },
+  surname: {
+    type: String,
+    required: [true, 'Surname is required'],
+    maxLength: [25, 'Cant be overcome 25 characters']
+  },
+  username: {
+    type: String,
+    unique: true
+  },
+
   password: {
     type: String,
-    required: [true, "The password is obligatory"],
+    required: [true, "The password is required"],
+    minLength: 8
   },
-  img: {
+  profilePicture: {
     type: String,
   },
 
@@ -31,18 +43,23 @@ const UserSchema = mongoose.Schema({
   state: {
     type: Boolean,
     default: true,
-  },
-  google: {
-    type: Boolean,
-    default: false,
-  },
-});
+  }
+},
+
+  {
+    timestamps: true, // Agregar el createAt y updateAt
+    versionKey: false // No agregar el camo __v
+  }
 
 
-UserSchema.methods.toJSON = function(){
-    const {__v, password, _id, ...usuario} = this.toObject();
-    usuario.uid = _id;
-    return usuario;
-} 
 
-export default mongoose.model('User', UserSchema);
+);
+
+
+UserSchema.methods.toJSON = function () {
+  const { __v, password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
+  return usuario;
+}
+
+export default model('User', UserSchema);
