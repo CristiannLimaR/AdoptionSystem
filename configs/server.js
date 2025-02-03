@@ -30,14 +30,13 @@ const connectDB = async () => {
 
 export const initServer = () => {
   const app = express();
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
 
   try {
     middlewares(app);
     connectDB();
     routes(app);
     app.listen(port)
-    confugreRutes(app);
     console.log(`Server running on port ${port}`);
 
   } catch (err) {

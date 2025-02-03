@@ -1,60 +1,91 @@
 import bcryptjs from "bcryptjs";
 import Usuario from "../users/user.model.js";
+import {hash, verify} from 'argon2';
 import { generateJWT } from "../helpers/generate-jwt.js";
 
 export const login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
 
   try {
-    const usuario = await Usuario.findOne({ email });
+    const lowerEmail = email ? email.toLowerCase() : null;
+    const lowerUsername = username ? username.toLowerCase() : null;
 
-    if (!usuario) {
+   const user = await Usuario.findOne({
+    $or: [{email: lowerEmail}, {username, lowerUsername}]
+   })
+
+    if (!user) {
       return res.status(400).json({
-        msg: "Credenciales incorrectas, Correo no existe en la base de datos",
+        msg: "Incorrect credentials, Email does not exist in the database",
       });
     }
 
-    if (!usuario.state) {
+    if (!user.state) {
       return res.status(400).json({
-        msg: "el usuario no existe en la base de datos",
+        msg: "The user does not exist in the database",
       });
     }
 
-    const validPassword = bcryptjs.compareSync(password, usuario.password)
+    const validPassword = await verify(user.password, password);
+
 
     if(!validPassword){
         return res.status(400).json({
-            msg: 'La contraseña es incorrecta'
+            msg: 'The password is incorrect'
         })
     }
 
-    const token = await generateJWT(usuario.id);
+    const token = await generateJWT(user.id)
+    re
 
     res.status(200).json({
-        msg: 'Login OK',
-        usuario,
-        token
+        msg: 'Successful login',
+        userDetails: {
+          username: user.username,
+          token: token,
+          profilePicture: user.profilePicture
+        }
     })
 
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      msg: "Comuniquese con el administrador",
+      msg: "Server error",
+      error: error.message
     });
   }
-};
+}
 
 export const register = async (req, res) => {
-  const { name, email, password, role, phone } = req.body;
-  const user = new Usuario({ name, email, password, role, phone });
+ try {
+  const data = req.body;
+  let profilePicture = req.file ? req.filename : null;
 
-  const salt = bcryptjs.genSaltSync();
+  const encryptedPassword = await hash(data.password);
+  console.log("error")
+  const user = await Usuario.create({
+    name: data.name,
+    surname: data.surname,
+    username: data.username,
+    email: data.email,
+    phone: data.phone,
+    password: encryptedPassword,
+    role: data.role,
+    profilePicture
+  })
 
-  user.password = bcryptjs.hashSync(password, salt);
+  return res.status(201).json({
+    msg: 'User registered successfully',
+    userDetails: {
+      user: user.email
+    }
+  })
 
-  await user.save();
-
-  res.status(200).json({
-    user,
-  });
+ } catch (error) {
+  console.log(error);
+  return res.status(500).json({
+    msg: "User registration failed",
+    err: error.message
+  })
+ }
 };
