@@ -1,5 +1,5 @@
 import bcryptjs from "bcryptjs";
-import Usuario from "../users/user.model.js";
+import User from "../users/user.model.js";
 import {hash, verify} from 'argon2';
 import { generateJWT } from "../helpers/generate-jwt.js";
 
@@ -7,11 +7,9 @@ export const login = async (req, res) => {
   const { email, password, username } = req.body;
 
   try {
-    const lowerEmail = email ? email.toLowerCase() : null;
-    const lowerUsername = username ? username.toLowerCase() : null;
 
-   const user = await Usuario.findOne({
-    $or: [{email: lowerEmail}, {username, lowerUsername}]
+   const user = await User.findOne({
+    $or: [{email}, {username}]
    })
 
     if (!user) {
@@ -36,7 +34,7 @@ export const login = async (req, res) => {
     }
 
     const token = await generateJWT(user.id)
-    re
+    
 
     res.status(200).json({
         msg: 'Successful login',
@@ -63,7 +61,7 @@ export const register = async (req, res) => {
 
   const encryptedPassword = await hash(data.password);
   console.log("error")
-  const user = await Usuario.create({
+  const user = await User.create({
     name: data.name,
     surname: data.surname,
     username: data.username,

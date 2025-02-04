@@ -16,7 +16,7 @@ export const deleteFileOnError = async (err, req, res, next) => {
             errors: err.errors
         });
     }
-    console.log("ererer")
+    
     return res.status(500).json({
         success: false,
         message: err.message

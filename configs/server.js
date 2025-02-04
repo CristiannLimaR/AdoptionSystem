@@ -5,6 +5,7 @@ import morgan from "morgan";
 import { dbConection } from "./mongo.js";
 import limiter from "../src/middlewares/validar-cant-peticiones.js";
 import authRoutes from '../src/auth/auth.routes.js'
+import userRoutes from '../src/users/user.routes.js'
 
 export const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -17,6 +18,7 @@ export const middlewares = (app) => {
 
 const routes = (app) => {
   app.use('/adoptionSystem/v1/auth', authRoutes);
+  app.use("/adoptionSystem/v1/users", userRoutes);
 };
 
 const connectDB = async () => {
@@ -30,7 +32,7 @@ const connectDB = async () => {
 
 export const initServer = () => {
   const app = express();
-  const port = process.env.PORT || 3001;
+  const port = process.env.PORT || 3004;
 
   try {
     middlewares(app);
