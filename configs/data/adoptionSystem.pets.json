@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67a3c48a79d1a206d1a1f01e"
+  },
+  "name": "Max",
+  "description": "Perro Bulldog",
+  "age": 12,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67a3c3040484d9331f864e30"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-05T20:05:30.301Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-05T22:34:27.672Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67a3d988cf5208dc3d2d57e8"
+  },
+  "name": "Jose",
+  "description": "Perro Salchicha",
+  "age": 12,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67a3c3040484d9331f864e30"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-05T21:35:04.588Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-05T22:34:10.010Z"
+  }
+}]

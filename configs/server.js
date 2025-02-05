@@ -3,7 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { dbConection } from "./mongo.js";
-import limiter from "../src/middlewares/validar-cant-peticiones.js";
+import limiter from "../src/middlewares/validate-cant-request.js";
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/users/user.routes.js'
 import petRoutes from '../src/pet/pet.routes.js'
