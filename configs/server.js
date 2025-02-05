@@ -6,6 +6,7 @@ import { dbConection } from "./mongo.js";
 import limiter from "../src/middlewares/validar-cant-peticiones.js";
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/users/user.routes.js'
+import petRoutes from '../src/pet/pet.routes.js'
 
 export const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -19,6 +20,7 @@ export const middlewares = (app) => {
 const routes = (app) => {
   app.use('/adoptionSystem/v1/auth', authRoutes);
   app.use("/adoptionSystem/v1/users", userRoutes);
+  app.use("/adoptionSystem/v1/pets", petRoutes);
 };
 
 const connectDB = async () => {

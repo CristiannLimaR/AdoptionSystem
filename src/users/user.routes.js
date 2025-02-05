@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { getUsers, updateUser, getUserById, deleteUser } from "./user.controller.js";
-import { validarCampos } from "../middlewares/validar-campos.js";
+import { validateFields } from "../middlewares/validate-fields.js";
 import { existsUserById } from "../helpers/db-validator.js";
 import { uploadProfilePicture } from "../middlewares/multer-upload.js";
 const router = Router();
@@ -13,7 +13,7 @@ router.get(
   [
     check("id", "No es un ID valido").isMongoId(),
     check("id").custom(existsUserById),
-    validarCampos,
+    validateFields,
   ],
   getUserById
 );
@@ -24,7 +24,7 @@ router.put(
   [
     check("id", "No es un ID valido").isMongoId(),
     check("id").custom(existsUserById),
-    validarCampos,
+    validateFields,
   ],
   updateUser
 );
@@ -34,7 +34,7 @@ router.delete(
   [
     check("id", "No es un ID valido").isMongoId(),
     check("id").custom(existsUserById),
-    validarCampos
+    validateFields
   ],
   deleteUser
 )
