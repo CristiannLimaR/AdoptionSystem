@@ -7,6 +7,7 @@ import limiter from "../src/middlewares/validate-cant-request.js";
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/users/user.routes.js'
 import petRoutes from '../src/pet/pet.routes.js'
+import appointmentRoutes from '../src/appointment/appointment.routes.js'
 
 export const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -21,6 +22,7 @@ const routes = (app) => {
   app.use('/adoptionSystem/v1/auth', authRoutes);
   app.use("/adoptionSystem/v1/users", userRoutes);
   app.use("/adoptionSystem/v1/pets", petRoutes);
+  app.use("/adoptionSystem/v1/appointments",appointmentRoutes)
 };
 
 const connectDB = async () => {
@@ -34,7 +36,7 @@ const connectDB = async () => {
 
 export const initServer = () => {
   const app = express();
-  const port = process.env.PORT || 3004;
+  const port = process.env.PORT || 3001;
 
   try {
     middlewares(app);

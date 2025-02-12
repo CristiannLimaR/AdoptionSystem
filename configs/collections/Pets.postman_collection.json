@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "64537d5b-ca2e-46f1-a3e2-d8a3f7d61f02",
+		"name": "Pets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42149033"
+	},
+	"item": [
+		{
+			"name": "AddPet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2EzYzMwNDA0ODRkOTMzMWY4NjRlMzAiLCJpYXQiOjE3Mzg3OTEyNzksImV4cCI6MTczODc5NDg3OX0.Xi75MVZ0sGwQbRlX_Sk4IOy3H2MfAFf8UQTMikMU9x0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Mad\",\n  \"description\": \"Perro Salchicha\",\n  \"age\": 12,\n  \"type\": \"perro\",\n  \"email\": \"alexxdsfsdfo@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3004/adoptionSystem/v1/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3004/adoptionSystem/v1/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchPet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2EzYzMwNDA0ODRkOTMzMWY4NjRlMzAiLCJpYXQiOjE3Mzg3OTEyNzksImV4cCI6MTczODc5NDg3OX0.Xi75MVZ0sGwQbRlX_Sk4IOy3H2MfAFf8UQTMikMU9x0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3004/adoptionSystem/v1/pets/67a3d988cf5208dc3d2d57e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						"67a3d988cf5208dc3d2d57e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2EzZTZlNTM3NjQ3Yjc2OTdkYzE1NWYiLCJpYXQiOjE3Mzg3OTQ4MzEsImV4cCI6MTczODc5ODQzMX0.BZxGyXeNL8vmEbFYM0CTaR18YTnXoV3q3R--SeXTGo8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3004/adoptionSystem/v1/pets/67a3c48a79d1a206d1a1f01e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						"67a3c48a79d1a206d1a1f01e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updatepet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

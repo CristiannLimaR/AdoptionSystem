@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "67aca9e31d964c4684458b4d"
+  },
+  "date": {
+    "$date": "2025-02-20T06:00:00.000Z"
+  },
+  "time": "10:00",
+  "owner": {
+    "$oid": "67acb21fd4efd22882782228"
+  },
+  "pet": {
+    "$oid": "67ac9035cb9114d1d514deb1"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-12T14:02:11.907Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-12T14:02:11.907Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67acaedce4a19a7f0986980e"
+  },
+  "date": {
+    "$date": "2025-02-20T06:00:00.000Z"
+  },
+  "time": "10:00",
+  "owner": {
+    "$oid": "67acb1a8d4efd22882782224"
+  },
+  "pet": {
+    "$oid": "67aca7e86f5a8bf2c196dcd3"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-12T14:23:24.043Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-12T14:23:24.043Z"
+  }
+}]

@@ -18,3 +18,9 @@ export const loginValidator = [
     body('password', 'Password must be at least 8 characters').isLength({min: 8}),
     validateFields
 ]
+
+export const appointmentValidator = [
+    body('date').isDate({format: 'MM/DD/YYYY'}).withMessage('Must be a valid date format (MM/DD/YYYY)'),
+    body('time').isTime({ format: 'HH:mm' }).withMessage('Must be a valid time format (HH:mm)'),
+    validateFields
+]

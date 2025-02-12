@@ -1,38 +1,38 @@
 [{
   "_id": {
-    "$oid": "67a3c48a79d1a206d1a1f01e"
+    "$oid": "67ac9035cb9114d1d514deb1"
   },
-  "name": "Max",
-  "description": "Perro Bulldog",
-  "age": 12,
+  "name": "Moli",
+  "description": "Perro Dalmata",
+  "age": 2,
   "type": "PERRO",
   "keeper": {
-    "$oid": "67a3c3040484d9331f864e30"
+    "$oid": "67ac9159cb9114d1d514dec5"
   },
   "status": false,
   "createdAt": {
-    "$date": "2025-02-05T20:05:30.301Z"
+    "$date": "2025-02-12T12:12:37.395Z"
   },
   "updatedAt": {
-    "$date": "2025-02-05T22:34:27.672Z"
+    "$date": "2025-02-12T12:19:29.032Z"
   }
 },
 {
   "_id": {
-    "$oid": "67a3d988cf5208dc3d2d57e8"
+    "$oid": "67aca7e86f5a8bf2c196dcd3"
   },
-  "name": "Jose",
-  "description": "Perro Salchicha",
-  "age": 12,
+  "name": "Copi",
+  "description": "Perro pitbull",
+  "age": 1,
   "type": "PERRO",
   "keeper": {
-    "$oid": "67a3c3040484d9331f864e30"
+    "$oid": "67ac8ec9f7e39d0b024c55c1"
   },
-  "status": false,
+  "status": true,
   "createdAt": {
-    "$date": "2025-02-05T21:35:04.588Z"
+    "$date": "2025-02-12T13:53:44.780Z"
   },
   "updatedAt": {
-    "$date": "2025-02-05T22:34:10.010Z"
+    "$date": "2025-02-12T13:53:44.780Z"
   }
 }]
