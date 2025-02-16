@@ -43,12 +43,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3004/adoptionSystem/v1/pets",
+					"raw": "http://localhost:3001/adoptionSystem/v1/pets",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3004",
+					"port": "3001",
 					"path": [
 						"adoptionSystem",
 						"v1",
@@ -117,8 +117,85 @@
 		{
 			"name": "Updatepet",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "0",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IxZmY5NTY4ZTA2NmJkNDRmMTgzMGIiLCJpYXQiOjE3Mzk3MjA4NjMsImV4cCI6MTczOTcyNDQ2M30.N03iA3m4G_-V5esjmfyll-DRdLr_fGs8Yx2jJTm2X3Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Kendrick\",\r\n  \"description\": \"Rod Wailer\",\r\n  \"age\": 12,\r\n  \"type\": \"perro\",\r\n  \"email\": \"Marian@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/adoptionSystem/v1/pets/67b208e4c3f713bb7c04ff64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						"67b208e4c3f713bb7c04ff64"
+					]
+				}
 			},
 			"response": []
 		}

@@ -1,5 +1,5 @@
 import { response, request } from "express";
-import { hash } from "argon2";
+import { hash, verify} from "argon2";
 import User from "./user.model.js";
 
 export const getUsers = async (req = request, res = response) => {
@@ -104,19 +104,42 @@ export const updatePassword = async (req, res=response) => {
   try {
     const { id } = req.params;
     const { _id, ...data } = req.body;
-    data.password = await hash(data.password);
-    const user = await User.findByIdAndUpdate(id, data);
+
+   const user = await User.findById(id)
+
+    if (!user) {
+      return res.status(404).json({
+        msg: "User not found",
+      });
+    }
+
+    if (!user.state) {
+      return res.status(400).json({
+        msg: "The user does not exist in the database",
+      });
+    }
+
+    const validPassword = await verify(user.password, data.oldPassword);
+
+    if(!validPassword){
+        return res.status(400).json({
+            msg: 'The password is incorrect'
+        })
+    }
+
+    data.newPassword = await hash(data.newPassword);
     
+    const updatedUser = await User.findByIdAndUpdate(id, {password: data.newPassword}, { new: true })
     res.status(200).json({
       success: true,
       msg: "Contraseña actualizada",
-      user
+      updatedUser
     });
   } catch (error) {
     res.status(500).json({
       success: false,
       msg: "Error al actualizar usuario",
-      error,
+      error: error.message,
     });
   }
 };

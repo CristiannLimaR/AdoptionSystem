@@ -35,4 +35,42 @@
   "updatedAt": {
     "$date": "2025-02-12T13:53:44.780Z"
   }
+},
+{
+  "_id": {
+    "$oid": "67b208e4c3f713bb7c04ff64"
+  },
+  "name": "Kendrick",
+  "description": "Rod Wailer",
+  "age": 12,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67acb1a8d4efd22882782224"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-16T15:48:52.444Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-16T15:51:46.132Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b209c9c3f713bb7c04ff79"
+  },
+  "name": "Miguelon",
+  "description": "Perro Salchicha",
+  "age": 12,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67b1ff9568e066bd44f1830b"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-16T15:52:41.284Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-16T15:53:41.954Z"
+  }
 }]

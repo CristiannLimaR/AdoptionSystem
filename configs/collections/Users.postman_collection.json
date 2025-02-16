@@ -12,10 +12,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/adoptionSystem/v1/users",
+					"raw": "http://localhost:3001/adoptionSystem/v1/users",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
+					"port": "3001",
 					"path": [
 						"adoptionSystem",
 						"v1",
@@ -31,26 +33,86 @@
 				"method": "PUT",
 				"header": [
 					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"name": "content-type",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "<calculated when request is sent>",
+						"name": "content-length",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FhZTA4ZWYxZWM3M2IxMDQ3NzlmMDAiLCJpYXQiOjE3MzkyNTE4OTgsImV4cCI6MTczOTI1NTQ5OH0.Eq4wVgyb-_tTClay0IxE0JDCgSk4OMU0NsArue0oqRo",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IxZmY5NTY4ZTA2NmJkNDRmMTgzMGIiLCJpYXQiOjE3Mzk3MTg1NjAsImV4cCI6MTczOTcyMjE2MH0.5Bbn8CPYjEqfsvqN-veNuQ6eTsjQz1jLaHAg08P_qT0",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\n  \"password\": \"12345678\"\n\n}\n"
+					"raw": "{\n\n \"name\": \"Cristian\",\n  \"email\": \"Cristian@gmail.com\",\n  \"surname\": \"Lima\",\n  \"username\": \"Crisss\",\n  \"password\": \"123456789\",\n  \"role\": \"ADMIN_ROLE\",\n  \"phone\": \"23232235\"\n\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "localhost/adoptionSystem/v1/users/password/67aae08ef1ec73b104779f00",
+					"raw": "http://localhost:3001/adoptionSystem/v1/users/67b1ff9568e066bd44f1830b",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
+					"port": "3001",
 					"path": [
 						"adoptionSystem",
 						"v1",
 						"users",
-						"password",
-						"67aae08ef1ec73b104779f00"
+						"67b1ff9568e066bd44f1830b"
 					]
 				}
 			},
@@ -59,10 +121,69 @@
 		{
 			"name": "deleteUsers",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"name": "cache-control",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "<calculated when request is sent>",
+						"name": "postman-token",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "<calculated when request is sent>",
+						"name": "host",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.39.1",
+						"name": "user-agent",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"name": "accept",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"name": "accept-encoding",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"name": "connection",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IxZmY5NTY4ZTA2NmJkNDRmMTgzMGIiLCJpYXQiOjE3Mzk3MTg1NjAsImV4cCI6MTczOTcyMjE2MH0.5Bbn8CPYjEqfsvqN-veNuQ6eTsjQz1jLaHAg08P_qT0",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:3001/adoptionSystem/v1/users/67acb21fd4efd22882782228",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						"67acb21fd4efd22882782228"
+					]
 				}
 			},
 			"response": []
@@ -73,26 +194,52 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/adoptionSystem/v1/users/findUser/67a3c6c7f80bd242ba89b897",
+					"raw": "http://localhost:3001/adoptionSystem/v1/users/findUser/67acb1a8d4efd22882782224",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
+					"port": "3001",
 					"path": [
 						"adoptionSystem",
 						"v1",
 						"users",
 						"findUser",
-						"67a3c6c7f80bd242ba89b897"
+						"67acb1a8d4efd22882782224"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "updatePassword",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n    \"oldPassword\": \"12345678910\",\r\n    \"newPassword\": \"1234567893\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/adoptionSystem/v1/users/updatePassword/67b1ff9568e066bd44f1830b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						"updatePassword",
+						"67b1ff9568e066bd44f1830b"
+					]
+				}
 			},
 			"response": []
 		}

@@ -6,7 +6,7 @@
   "email": "Marian@gmail.com",
   "surname": "Ale",
   "username": "Mariann",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$OIrr5muUa9uQ/TdNzGI3xA$wNg1qkxdcVkcB+W6tiksv31yTy7ZLWvsejmE1YmZGKo",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$mh/3da7+2sEKPjig8HvZNA$IaylAH4oRTBTxI+9gvP/NJE9fb2oSQLJApPbcXNT+lk",
   "profilePicture": null,
   "phone": "12345678",
   "role": "ADMIN_ROLE",
@@ -15,7 +15,7 @@
     "$date": "2025-02-12T14:35:20.986Z"
   },
   "updatedAt": {
-    "$date": "2025-02-12T14:35:20.986Z"
+    "$date": "2025-02-12T16:00:29.933Z"
   }
 },
 {
@@ -28,14 +28,14 @@
   "username": "carloslopez",
   "password": "$argon2id$v=19$m=65536,t=3,p=4$ERdr1fY385sB8feQ2dHoOQ$3xQYF3Fv0SbTzS5BrLLn0dtU4les8kvQ+6jTDcZV/HU",
   "profilePicture": null,
-  "phone": "11223344",
+  "phone": "11223322",
   "role": "USER_ROLE",
-  "state": true,
+  "state": false,
   "createdAt": {
     "$date": "2025-02-12T14:37:19.871Z"
   },
   "updatedAt": {
-    "$date": "2025-02-12T14:37:19.871Z"
+    "$date": "2025-02-16T15:19:07.166Z"
   }
 },
 {
@@ -56,5 +56,25 @@
   },
   "updatedAt": {
     "$date": "2025-02-12T14:38:14.480Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b1ff9568e066bd44f1830b"
+  },
+  "name": "Cristian",
+  "email": "Cristian@gmail.com",
+  "surname": "Lima",
+  "username": "Crisss",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$yiBSbjpnmAcuyLRZS0bgvw$bHqmrrk9VZ86/sbruYWiXI5DejzFCWd0CbFHgbwjxMI",
+  "profilePicture": null,
+  "phone": "23232235",
+  "role": "ADMIN_ROLE",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-02-16T15:09:09.768Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-16T15:46:14.305Z"
   }
 }]

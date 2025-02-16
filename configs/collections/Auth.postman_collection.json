@@ -18,7 +18,12 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"crissss\",\n  \"email\": \"dssdfsj@gmail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ADMIN_ROLE\",\n  \"phone\": \"23232234\"\n}"
+					"raw": "{\n  \"name\": \"Cristian\",\n  \"email\": \"Cristian@gmail.com\",\n  \"surname\": \"Lima\",\n  \"username\": \"Crisss\",\n  \"password\": \"12345678\",\n  \"role\": \"ADMIN_ROLE\",\n  \"phone\": \"23232234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:3001/adoptionSystem/v1/auth/register",
@@ -49,15 +54,20 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"alexxdsfsdfo@gmail.com\",\n  \"password\": \"12345678\"\n}"
+					"raw": "{\n  \"email\": \"Cristian@gmail.com\",\n  \"password\": \"1234567893\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:3004/adoptionSystem/v1/auth/login",
+					"raw": "http://localhost:3001/adoptionSystem/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3004",
+					"port": "3001",
 					"path": [
 						"adoptionSystem",
 						"v1",

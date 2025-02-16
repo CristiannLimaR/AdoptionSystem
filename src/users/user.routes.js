@@ -37,6 +37,8 @@ router.put(
   [
     check("id", "No es un ID valido").isMongoId(),
     check("id").custom(existsUserById),
+    check('oldPassword', 'the old Password is required').notEmpty(),
+    check('newPassword', 'Password must be at least 8 characters').isLength({min: 8}),
     validateFields,
   ],
   updatePassword
@@ -46,7 +48,7 @@ router.delete(
   "/:id",
   [
     validateJWT,
-    hasRole("ADMIN_ROLE, VENTAS_ROLE"),
+    hasRole("ADMIN_ROLE","VENTAS_ROLE"),
     check("id", "No es un ID valido").isMongoId(),
     check("id").custom(existsUserById),
     validateFields
